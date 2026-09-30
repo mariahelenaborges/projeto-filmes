@@ -1,0 +1,60 @@
+<div class="accordion" id="accordionFilme">
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#secaoFicha">
+        Ficha Técnica
+      </button>
+    </h2>
+    <div id="secaoFicha" class="accordion-collapse collapse show" data-bs-parent="#accordionFilme">
+      <div class="accordion-body">
+        {{#if filme.fichaTecnica}}
+          <ul>
+            <li>Duração: {{filme.fichaTecnica.duracaoMinutos}} minutos</li>
+            <li>Orçamento: {{filme.fichaTecnica.orcamento}}</li>
+            <li>Bilheteria: {{filme.fichaTecnica.bilheteria}}</li>
+          </ul>
+        {{else}}
+          <a href="/filmes/{{filme.id}}/ficha-tecnica/cadastrar">Cadastrar ficha técnica</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#secaoDiretor">
+        Diretor
+      </button>
+    </h2>
+    <div id="secaoDiretor" class="accordion-collapse collapse" data-bs-parent="#accordionFilme">
+      <div class="accordion-body">
+        {{#if filme.diretor}}
+          <a href="/diretores/{{filme.diretor.id}}">{{filme.diretor.nome}}</a>
+        {{else}}
+          Filme sem diretor cadastrado.
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#secaoElenco">
+        Elenco
+      </button>
+    </h2>
+    <div id="secaoElenco" class="accordion-collapse collapse" data-bs-parent="#accordionFilme">
+      <div class="accordion-body">
+        <ul>
+          {{#each filme.artistas}}
+            <li><a href="/artistas/{{this.id}}">{{this.nome}}</a></li>
+          {{else}}
+            <li>Nenhum artista cadastrado.</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

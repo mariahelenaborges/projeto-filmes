@@ -1,0 +1,36 @@
+<h1>Cadastrar Filme</h1>
+
+<form action="/filmes" method="POST">
+
+  <div class="mb-3">
+    <label class="form-label">Nome:</label>
+    <input type="text" class="form-control" name="nome">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Ano:</label>
+    <input type="number" class="form-control" name="ano">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Diretor:</label>
+    <select class="form-select" name="diretorId">
+      <option value="">-- Escolha --</option>
+      {{#each diretores}}
+        <option value="{{this.id}}">{{this.nome}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Artistas (segure Ctrl para marcar vários):</label>
+    <select class="form-select" name="artistas" multiple>
+      {{#each artistas}}
+        <option value="{{this.id}}">{{this.nome}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+
+</form>

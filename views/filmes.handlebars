@@ -1,0 +1,14 @@
+<h1>Filmes</h1>
+
+<a href="/filmes/cadastrar">+ Cadastrar filme</a>
+<hr>
+
+{{#if filmes.length}}
+  <div class="row">
+    {{#each filmes}}
+      {{> card}}
+    {{/each}}
+  </div>
+{{else}}
+  {{> alert}}
+{{/if}}

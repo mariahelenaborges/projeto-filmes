@@ -1,0 +1,22 @@
+<h1>Ficha Técnica - {{filme.nome}}</h1>
+
+<form action="/filmes/{{filme.id}}/ficha-tecnica" method="POST">
+
+  <div class="mb-3">
+    <label class="form-label">Duração (minutos):</label>
+    <input type="text" class="form-control" name="duracaoMinutos">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Orçamento:</label>
+    <input type="text" step="0.01" class="form-control" name="orcamento">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Bilheteria:</label>
+    <input type="text" step="0.01" class="form-control" name="bilheteria">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+
+</form>

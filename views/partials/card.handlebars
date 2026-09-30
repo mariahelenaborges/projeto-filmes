@@ -1,0 +1,19 @@
+<div class="col-md-4 mb-4">
+  <div class="card h-100">
+
+    <div class="card-body">
+      <h5 class="card-title">{{nome}}</h5>
+      <p class="card-text">Ano de lançamento: {{> badge}}</p>
+    </div>
+
+    <div class="card-footer">
+      <a href="/filmes/{{id}}">Detalhar</a> |
+      <a href="/filmes/{{id}}/editar">Editar</a>
+
+      <form action="/filmes/{{id}}?_method=DELETE" method="POST" style="display: inline;">
+        <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<h1>Cadastrar Artista</h1>
+
+<form action="/artistas" method="POST">
+
+  <div class="mb-3">
+    <label class="form-label">Nome:</label>
+    <input type="text" class="form-control" name="nome">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Data de nascimento:</label>
+    <input type="text" class="form-control" name="dataNascimento"
+           placeholder="dd/mm/aaaa" maxlength="10"
+           pattern="\d{2}/\d{2}/\d{4}" title="Digite no formato dd/mm/aaaa">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Nome artístico:</label>
+    <input type="text" class="form-control" name="nomeArtistico">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+
+</form>

@@ -1,0 +1,29 @@
+<h1>Diretores</h1>
+
+<a href="/diretores/cadastrar">+ Cadastrar diretor</a>
+<hr>
+
+{{#if diretores.length}}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Nacionalidade</th>
+        <th>Data de Nascimento</th>
+        <th>Ver</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each diretores}}
+        <tr>
+          <td>{{this.nome}}</td>
+          <td>{{this.nacionalidade}}</td>
+          <td>{{this.dataNascimento}}</td>
+          <td><a href="/diretores/{{this.id}}">Detalhar</a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  {{> alert}}
+{{/if}}

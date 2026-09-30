@@ -1,0 +1,31 @@
+<h1>Fichas Técnicas</h1>
+
+<p>Para cadastrar uma ficha, abra um filme e use a seção "Ficha Técnica".</p>
+<hr>
+
+{{#if fichas.length}}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Filme</th>
+        <th>Duração (min)</th>
+        <th>Orçamento</th>
+        <th>Bilheteria</th>
+        <th>Ver</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each fichas}}
+        <tr>
+          <td>{{this.filme.nome}}</td>
+          <td>{{this.duracaoMinutos}}</td>
+          <td>{{this.orcamento}}</td>
+          <td>{{this.bilheteria}}</td>
+          <td><a href="/fichas-tecnicas/{{this.id}}">Detalhar</a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  {{> alert}}
+{{/if}}

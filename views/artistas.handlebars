@@ -1,0 +1,16 @@
+<h1>Artistas</h1>
+
+<a href="/artistas/cadastrar">+ Cadastrar artista</a>
+<hr>
+
+{{#if artistas.length}}
+  <ul class="list-group">
+    {{#each artistas}}
+      <li class="list-group-item">
+        <a href="/artistas/{{this.id}}">{{this.nome}}</a>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  {{> alert}}
+{{/if}}
